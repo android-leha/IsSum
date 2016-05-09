@@ -13,34 +13,43 @@ import static org.junit.Assert.*;
 @RunWith(value = Parameterized.class)
 public class MainTest {
 
-    private int[] array = {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 3};
-//    private int[] array = {40, 4, 1, 8, 9, 2, 3, 7, 12, 20};
-//    private int[] array = {124, 32, 63, 17}; Версия массива от Игоря Петицких
+    private int[] array;
 
     private int sum;
     private boolean result;
 
 
-    public MainTest(int sum, boolean result) {
+    public MainTest(int[] array, int sum, boolean result) {
+        this.array = array;
         this.sum = sum;
         this.result = result;
     }
 
+
     @Parameters
     public static Collection<Object[]> data() {
-        Object[][] data = new Object[][]{
-//                {5, true},
-//                {7, true},
-//                {26, false},
-//                {17, true},
-//                {25, false},
-//                {10, true},
-//                {27, true},
-//                {60, true},
-//                {250, false},
-//                {321, false} // Данные от Игоря Петицких
-//                {5, true},
-                {7, true},
+        int[][] arrays = {
+                {40, 4, 1, 8, 9, 2, 3, 7, 12, 20},
+                {124, 32, 63, 17},
+                {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 3} ,
+        };
+        Object[][] data = new Object[][] {
+                {arrays[0], 5, true},
+                {arrays[0], 7, true},
+                {arrays[0], 26, false},
+                {arrays[0], 17, true},
+                {arrays[0], 25, false},
+                {arrays[0], 10, true},
+                {arrays[0], 27, true},
+                {arrays[0], 60, true},
+                {arrays[0], 250, false},
+
+                {arrays[1], 321, false},
+
+                {arrays[2], 5, true},
+                {arrays[2], 7, true},
+                {arrays[2], 8, true},
+                {arrays[2], 9, false},
         };
         return Arrays.asList(data);
     }
