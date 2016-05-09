@@ -13,7 +13,8 @@ import static org.junit.Assert.*;
 @RunWith(value = Parameterized.class)
 public class MainTest {
 
-    private int[] array = {40, 4, 1, 8, 9, 2, 3, 7, 12, 20};
+    private int[] array = {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 3};
+//    private int[] array = {40, 4, 1, 8, 9, 2, 3, 7, 12, 20};
 //    private int[] array = {124, 32, 63, 17}; Версия массива от Игоря Петицких
 
     private int sum;
@@ -28,16 +29,18 @@ public class MainTest {
     @Parameters
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][]{
-                {5, true},
-                {7, true},
-                {26, false},
-                {17, true},
-                {25, false},
-                {10, true},
-                {27, true},
-                {60, true},
-                {250, false},
+//                {5, true},
+//                {7, true},
+//                {26, false},
+//                {17, true},
+//                {25, false},
+//                {10, true},
+//                {27, true},
+//                {60, true},
+//                {250, false},
 //                {321, false} // Данные от Игоря Петицких
+//                {5, true},
+                {7, true},
         };
         return Arrays.asList(data);
     }
