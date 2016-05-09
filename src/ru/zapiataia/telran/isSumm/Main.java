@@ -21,17 +21,18 @@ public class Main {
      * @return result
      */
     static boolean isSumPresent(int[] array, int sum) {
-        int tmp[] = new int[sum];
-        for (int index : array) {
-            int revIndex = sum - index;
-            if (index > 0 && index < sum) {
-                tmp[index] += index;
-                if (index != revIndex) {
-                    tmp[revIndex] += index;
-                }
+        if (sum < 2) {
+            return false;
+        }
+        int size = (int) Math.floor(sum / 2);
+        int tmp[] = new int[size];
+        for (int value : array) {
+            if (value > 0 && value < sum) {
+                int index = (value > size) ? sum - value : value;
+                tmp[index - 1] += value;
                 // Just for easy debug
-//                System.out.println(Arrays.toString(tmp) + " {" + index + ", " + revIndex + ", " + sum + "}");
-                if (tmp[index] == sum || tmp[revIndex] == sum) {
+//                System.out.println(Arrays.toString(tmp) + " {" + value + ", " + index + ", " + sum + "}");
+                if (tmp[index - 1] == sum) {
                     return true;
                 }
             }
