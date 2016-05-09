@@ -29,12 +29,10 @@ public class Main {
         for (int value : array) {
             if (value > 0 && value < sum) {
                 int index = (value > size) ? sum - value : value;
-                if (tmp[index - 1] != value) {
+                if (tmp[index - 1] == 0) {
                     tmp[index - 1] += value;
                 }
-                // Just for easy debug
-                System.out.println(Arrays.toString(tmp) + " {" + value + ", " + index + ", " + sum + "}");
-                if (tmp[index - 1] == sum) {
+                if (tmp[index - 1] + value == sum) {
                     return true;
                 }
             }
