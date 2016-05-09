@@ -31,7 +31,8 @@ public class MainTest {
         int[][] arrays = {
                 {40, 4, 1, 8, 9, 2, 3, 7, 12, 20},
                 {124, 32, 63, 17},
-                {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 3} ,
+                {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 3},
+                {0, 16, 32, 48, 64, 80, 96, 112, 128, 142, 158, 174, 190, 206, 222, 238, 256, 512, 1024}
         };
         Object[][] data = new Object[][] {
                 {arrays[0], 5, true},
@@ -50,6 +51,9 @@ public class MainTest {
                 {arrays[2], 7, true},
                 {arrays[2], 8, true},
                 {arrays[2], 9, false},
+
+                {arrays[3], 48, true},
+                {arrays[3], 15, false},
         };
         return Arrays.asList(data);
     }

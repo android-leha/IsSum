@@ -14,11 +14,11 @@ public class Main {
     }
 
     /**
-     * Looking for two elements in result
+     * Looking for two elements with add amount equals to sum
      *
      * @param array assumed array
      * @param sum the required amount
-     * @return result
+     * @return result true if founded
      */
     static boolean isSumPresent(int[] array, int sum) {
         if (sum < 2) {
@@ -31,8 +31,7 @@ public class Main {
                 int index = (value > size) ? sum - value : value;
                 if (tmp[index - 1] == 0) {
                     tmp[index - 1] += value;
-                }
-                if (tmp[index - 1] + value == sum) {
+                } else if (tmp[index - 1] + value == sum) {
                     return true;
                 }
             }
